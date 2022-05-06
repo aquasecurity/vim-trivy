@@ -1,0 +1,7 @@
+:trivy	vim-trivy.txt	/*:trivy*
+:trivyInstall	vim-trivy.txt	/*:trivyInstall*
+:trivyUpdate	vim-trivy.txt	/*:trivyUpdate*
+vim-trivy	vim-trivy.txt	/*vim-trivy*
+vim-trivy-commands	vim-trivy.txt	/*vim-trivy-commands*
+vim-trivy-contents	vim-trivy.txt	/*vim-trivy-contents*
+vim-trivy.txt	vim-trivy.txt	/*vim-trivy.txt*
