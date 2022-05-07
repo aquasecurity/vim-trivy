@@ -24,6 +24,5 @@ Run `:Trivy` to get a list of the current Trivy issues in your current directory
 
 ## Example usage
 
-
-https://user-images.githubusercontent.com/3049157/167206039-4bd83274-5359-4e91-90d2-a9459172969e.mp4
+![Example](.github/example.gif)
 
