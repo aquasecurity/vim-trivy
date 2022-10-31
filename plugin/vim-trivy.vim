@@ -16,12 +16,12 @@ function! s:Trivy() abort
 		let errorformat = &g:errorformat
 
 		let s:template = '"@' . expand('<sfile>:p:h:h') . '/vim-trivy/csv.tpl"'
-		let s:command = 'trivy -q fs --security-checks vuln,config --exit-code 0 -f template --template ' . s:template . ' . \| sort -u \| sed -r "/^\s*$/d"'
+		let s:command = 'trivy fs -q --security-checks vuln,config --exit-code 0 -f template --template ' . s:template . ' . | sort -u | sed -r "/^\s*$/d"'
 		
  		" set the error format for use with Trivy
 		let &g:errorformat = '%f\,%l\,%m'
 		" get the latest Trivy comments and open the quick fix window with them
-		cgetexpr system('trivy -q fs --security-checks vuln,config --exit-code 0 -f template --template ' . s:template . ' . \| sort -u \| sed -r "/^\s*$/d"') | cw
+		cgetexpr system(s:command) | cw
 		call setqflist([], 'a', {'title' : ':Trivy'})
 		copen
 	finally
