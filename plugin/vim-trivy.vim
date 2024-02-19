@@ -15,7 +15,7 @@ function! s:Trivy() abort
 		" capture the current error format
 		let errorformat = &g:errorformat
 
-		let s:template = '"@' . expand('<sfile>:p:h:h') . '/vim-trivy/csv.tpl"'
+		let s:template = '"@' . expand('<script>:p:h:h') . '/csv.tpl"'
 		let s:command = 'trivy fs -q --security-checks vuln,config --exit-code 0 -f template --template ' . s:template . ' . | sort -u | sed -r "/^\s*$/d"'
 		
  		" set the error format for use with Trivy
