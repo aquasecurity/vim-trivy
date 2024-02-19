@@ -1,3 +1,4 @@
+" vim:ts=2:sw=2:et
 ""
 " @usage {}
 " Run Trivy against the current directory and populate the QuickFix list
