@@ -1,4 +1,5 @@
 " vim:ts=2:sw=2:et
+
 ""
 " @usage {}
 " Run Trivy against the current directory and populate the QuickFix list
@@ -16,7 +17,7 @@ function! s:Trivy() abort
     let errorformat = &g:errorformat
 
     let s:template = '"@' . expand('<script>:p:h:h') . '/csv.tpl"'
-    let s:command = 'trivy fs -q --scanners vuln,misconfig --exit-code 0 -f template --template ' . s:template . ' . | sort -u | sed -r "/^\s*$/d"'
+    let s:command = expand('<script>:p:h:h') . '/bin/trivy fs -q --scanners vuln,misconfig --exit-code 0 -f template --template ' . s:template . ' . | sort -u | sed -r "/^\s*$/d"'
 
     " set the error format for use with Trivy
     let &g:errorformat = '%f\,%l\,%m'
@@ -34,7 +35,7 @@ endfunction
 function! s:TrivyInstall() abort
   try
     echom "Downloading the latest version of Trivy"
-    let installResult = system('curl https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | bash')
+    let installResult = system('curl https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ' . expand('<script>:p:h:h') . '/bin')
     if v:shell_error != 0
       echom installResult
     else
