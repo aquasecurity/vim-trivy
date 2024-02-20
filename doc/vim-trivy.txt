@@ -8,14 +8,10 @@ CONTENTS                                                  *vim-trivy-contents*
 ==============================================================================
 COMMANDS                                                  *vim-trivy-commands*
 
-:trivy                                                                *:trivy*
+:Trivy                                                                *:Trivy*
   Run trivy against the current directory and populate the QuickFix list
 
-:trivyInstall                                                  *:trivyInstall*
+:TrivyInstall                                                  *:TrivyInstall*
   Install the latest version of trivy to %GOPATH/bin/trivy
-
-:trivyUpdate                                                    *:trivyUpdate*
-  Updates trivy to the latest version, requires trivy to be on the path
-
 
 vim:tw=78:ts=8:ft=help:norl:
